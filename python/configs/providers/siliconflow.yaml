@@ -1,0 +1,42 @@
+name: SiliconFlow
+provider_type: siliconflow
+enabled: true
+connection:
+  base_url: https://api.siliconflow.cn/v1
+  api_key_env: SILICONFLOW_API_KEY
+default_model: inclusionAI/Ring-1T
+defaults:
+  temperature: 0.7
+  max_tokens: 4096
+models:
+- id: deepseek-ai/DeepSeek-V3.1-Terminus
+  name: DeepSeek V3.1 Terminus
+  context_length: 160000
+- id: Qwen/Qwen3-235B-A22B-Thinking-2507
+  name: Qwen 3.235B A22B Thinking 2507
+  context_length: 256000
+- id: moonshotai/Kimi-K2-Instruct-0905
+  name: Kimi K2 Instruct 0905
+  context_length: 256000
+- id: zai-org/GLM-4.5
+  name: GLM-4.5
+  context_length: 128000
+- id: inclusionAI/Ring-1T
+  name: Ring 1T
+  context_length: 128000
+embedding:
+  default_model: Qwen/Qwen3-Embedding-4B
+  defaults:
+    dimensions: 2560
+    encoding_format: float
+  models:
+  - id: Qwen/Qwen3-Embedding-4B
+    name: Qwen3 Embedding 4B
+    dimensions: 2560
+    max_input: 32768
+    description: Qwen3 Embedding Model
+  - id: BAAI/bge-m3
+    name: BGE M3
+    dimensions: 1024
+    max_input: 8192
+    description: BGE Free Vector Embedding Model

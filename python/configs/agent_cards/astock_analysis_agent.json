@@ -1,0 +1,29 @@
+{
+  "name": "AStockAnalysisAgent",
+  "display_name": "A-Share Analysis Agent",
+  "url": "http://localhost:10008/",
+  "description": "Low-cost A-share analysis agent that consumes the local A-share data layer and produces trend, risk, sentiment, support/resistance, and source-status summaries without placing trades.",
+  "capabilities": {
+    "streaming": true
+  },
+  "skills": [
+    {
+      "id": "analyze_astock",
+      "name": "Analyze A-share stock",
+      "description": "Analyze an A-share symbol using structured local data from mootdx, CNINFO, AkShare/Tavily news, and cache fallback.",
+      "examples": [
+        "分析 300750",
+        "帮我看一下 600519.SH 的走势",
+        "宁德时代 300750 当前风险如何"
+      ],
+      "tags": ["A股", "analysis", "trend", "risk", "market data"]
+    }
+  ],
+  "enabled": true,
+  "metadata": {
+    "version": "0.1.0",
+    "author": "ValueCell Team",
+    "tags": ["A股", "analysis", "low-cost", "structured-data"],
+    "local_agent_class": "valuecell.agents.astock_analysis_agent.core:AStockAnalysisAgent"
+  }
+}
